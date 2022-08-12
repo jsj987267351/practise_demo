@@ -6,5 +6,6 @@ public class gitdemo {
         System.out.println("Hello 1");
         System.out.println("Hello 2");
         System.out.println("Hello master");
+        System.out.println("Hello pull");
     }
 }
