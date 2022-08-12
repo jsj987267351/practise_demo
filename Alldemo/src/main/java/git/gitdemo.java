@@ -9,5 +9,6 @@ public class gitdemo {
         System.out.println("Hello pull");
         System.out.println("Hello pull");
         System.out.println("Hello push");
+        System.out.println("test");
     }
 }
