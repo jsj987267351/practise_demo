@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+<input type="button" value="点我" onclick="on()"><br>
+<input type="button" value="再点我" id="btn">
+
+<script>
+    function on() {
+        alert("小丑")
+    }
+
+    document.getElementById("btn").onclick = function (){
+        alert("还是小丑")
+    }
+
+
+</script>
+</body>
+</html>

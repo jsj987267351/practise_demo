@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Title</title>
+</head>
+<body>
+
+
+
+<script>
+
+
+//    var test = "小丑";
+//    alert(test)
+
+{
+    // var test = "小丑"   //作用域广，且可重复定义，后者覆盖前者
+    // let test = "小丑"   //当前大括号可用，且不能重复定义
+}
+// alert(test)
+
+// const pi = 3.14   //常量，不可更改
+// pi = 22
+
+//数据类型
+var age = 20  //number
+var flag = true  //boolean
+// alert(typeof age)
+// alert(typeof flag)
+
+var obj = null
+// alert(typeof obj)   //boject  null
+var a
+// alert(typeof a)  //undefined
+
+
+//运算符
+var str ="123"
+// alert(parseInt(str)+1)  //字符串转数字
+
+// var  flag = +true
+// alert(flag)  //bool转数字
+
+var flag = 0
+// if(flag){
+//     alert("转为true")
+// }else {
+//     alert("转为false")
+// }
+
+
+
+
+
+//函数
+// function add(a,b){
+//     return a+b
+// }
+// let c = add(1,2)
+// alert(c)
+
+
+// var add = function (a,b){
+//     return a+b
+// }
+// let c = add(2,4)
+// alert(c)
+
+
+var add = function (a,b){
+    return a+b
+}
+let c = add(1,2,3)
+let d = add(1)
+// alert(c)
+alert(d)
+
+    // window.alert("小丑")
+    // document.write("小丑")   //写入页面
+    // console.log("小丑")   //写入浏览器的控制台
+</script>
+</body>
+</html>
