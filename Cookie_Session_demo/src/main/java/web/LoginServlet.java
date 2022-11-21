@@ -36,7 +36,6 @@ public class LoginServlet extends HttpServlet {
             c_password.setMaxAge(60*60*24*7);
             response.addCookie(c_username);
             response.addCookie(c_password);
-
         }
             HttpSession session = request.getSession();
             session.setAttribute("user",user);
