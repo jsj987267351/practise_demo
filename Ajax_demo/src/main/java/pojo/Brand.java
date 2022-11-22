@@ -19,9 +19,6 @@ public class Brand {
     private Integer status;
 
 
-    public Brand() {
-    }
-
     public Brand(Integer id, String brandName, String companyName, String description) {
         this.id = id;
         this.brandName = brandName;
@@ -84,6 +81,16 @@ public class Brand {
 
     public void setStatus(Integer status) {
         this.status = status;
+    }
+
+    //逻辑视图
+    public String getStatusStr() {
+
+        if(this.status == 1){
+            return "启用";
+        }
+
+        return "禁用";
     }
 
     @Override

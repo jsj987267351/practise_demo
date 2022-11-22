@@ -26,6 +26,7 @@ public interface BrandMapper {
      * @param id
      * @return
      */
+
     @Select("select * from tb_brand where id = #{id}")
     @ResultMap("brandResultMap")
     Brand selectById(int id);
@@ -34,6 +35,7 @@ public interface BrandMapper {
      * 修改
      * @param brand
      */
+
     @Update("update tb_brand set brand_name = #{brandName},company_name = #{companyName},ordered = #{ordered},description = #{description},status = #{status} where id = #{id}")
     void update(Brand brand);
 
