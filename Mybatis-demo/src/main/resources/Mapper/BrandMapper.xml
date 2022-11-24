@@ -13,7 +13,6 @@
     </resultMap>
 
 
-
     <select id="selectAll" resultMap="brandResultMap">
         select *
         from tb_brand;
@@ -108,5 +107,6 @@
             </foreach>
             );
     </delete>
+
 
 </mapper>

@@ -19,22 +19,6 @@ public class Brand {
     private Integer status;
 
 
-    public Brand(Integer id, String brandName, String companyName, String description) {
-        this.id = id;
-        this.brandName = brandName;
-        this.companyName = companyName;
-        this.description = description;
-    }
-
-    public Brand(Integer id, String brandName, String companyName, Integer ordered, String description, Integer status) {
-        this.id = id;
-        this.brandName = brandName;
-        this.companyName = companyName;
-        this.ordered = ordered;
-        this.description = description;
-        this.status = status;
-    }
-
     public Integer getId() {
         return id;
     }
@@ -78,19 +62,16 @@ public class Brand {
     public Integer getStatus() {
         return status;
     }
+    //逻辑视图
+    public String getStatusStr(){
+        if (status == null){
+            return "未知";
+        }
+        return status == 0 ? "禁用":"启用";
+    }
 
     public void setStatus(Integer status) {
         this.status = status;
-    }
-
-    //逻辑视图
-    public String getStatusStr() {
-
-        if(this.status == 1){
-            return "启用";
-        }
-
-        return "禁用";
     }
 
     @Override
