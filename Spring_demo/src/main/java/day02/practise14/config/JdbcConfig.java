@@ -22,7 +22,7 @@ public class JdbcConfig {
     //2.添加@Bean，表示当前方法的返回值是一个bean
     //@Bean修饰的方法，形参根据类型自动装配
     @Bean
-    public  DataSource dataSource(BookDao bookDao){
+    public DataSource dataSource(BookDao bookDao){
         System.out.println(bookDao);
         DruidDataSource ds = new DruidDataSource();
         ds.setDriverClassName(driver);
