@@ -1,7 +1,7 @@
 package day01.practise02;
 
 
-import day01.practise02.dao.BookDao;
+import day01.practise02.mapper.BookDao;
 
 import org.springframework.context.ApplicationContext;
 import org.springframework.context.support.ClassPathXmlApplicationContext;

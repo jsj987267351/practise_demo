@@ -1,6 +1,6 @@
-package day01.practise02.dao.impl;
+package day01.practise02.mapper.impl;
 
-import day01.practise02.dao.BookDao;
+import day01.practise02.mapper.BookDao;
 
 public class BookDaoImpl implements BookDao {
     @Override

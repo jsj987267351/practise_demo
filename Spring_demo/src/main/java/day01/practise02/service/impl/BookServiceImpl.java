@@ -1,6 +1,6 @@
 package day01.practise02.service.impl;
 
-import day01.practise02.dao.BookDao;
+import day01.practise02.mapper.BookDao;
 import day01.practise02.service.BookService;
 
 public class BookServiceImpl implements BookService {

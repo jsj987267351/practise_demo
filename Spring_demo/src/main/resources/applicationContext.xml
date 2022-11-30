@@ -24,7 +24,7 @@
 
     <!--    day01  practise02   名字和范围注入-->
     <!--scope范围，默认为singleton,为同一个bean-->
-    <!--    <bean  id="bookDao" name="dao" class="day01.practise02.dao.impl.BookDaoImpl" scope="prototype"/>-->
+    <!--    <bean  id="bookDao" name="dao" class="day01.practise02.mapper.impl.BookDaoImpl" scope="prototype"/>-->
     <!--    <bean id="bookService" name="service service2" class="day01.practise02.service.impl.BookServiceImpl">-->
     <!--    property标签表示配置当前bean的属性，name就是set方法里的对象    ref表示参照哪一个bean  //第9行&ndash;&gt;-->
     <!--        <property name="bookDao" ref="bookDao" />-->
