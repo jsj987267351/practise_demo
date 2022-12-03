@@ -1,0 +1,31 @@
+
+spring:
+  datasource:
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    url: jdbc:mysql://localhost:3306/mybatis?useSSL=false
+    type: com.alibaba.druid.pool.DruidDataSource
+    username: root
+    password: qaz050212
+#    控制器不显示springboot测试等
+  main:
+    banner-mode: off
+
+#    开启mybatisplus的日志（输出到控制台）
+mybatis-plus:
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+  global-config:
+    #    控制器不显示mybatisplus测试等
+    banner: false
+    db-config:
+#      全局配置 所有id皆使用数据库自增
+      id-type: auto
+#      全局配置，使每一个pojo对应数据库自动前面添加tbl
+      table-prefix: tbl_
+#      全局配置，设置哪些为逻辑删除的字段，以及已删除为多少，未删除为多少
+      logic-delete-field: deleted
+      logic-delete-value: 1
+      logic-not-delete-value: 0
+
+
+
