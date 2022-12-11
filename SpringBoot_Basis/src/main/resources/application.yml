@@ -1,0 +1,57 @@
+server:
+  port: 80
+
+#day02
+#country: china
+#province: jiangsu
+#city: xuzhou
+#
+#user23:
+#  name: zhangchaozheng
+#  age: 18
+#
+#likes:
+#  - game
+#  - swimming
+#  - music
+#
+#user6:
+#  -
+#    name: zhangsan
+#    age: 18
+#  -
+#    name: lisi
+#    age: 16
+#
+##若使用双引号包裹，转义字符则会生效
+#baseDir: c:\win11
+#temDir: ${baseDir}\temp     #c:\win11\temp
+#
+##创建类封装以下数据
+##用spring来封装对象，并且告诉spring加载这组信息
+##使用时候从spring中直接获取信息使用
+#datasource:
+#  driver: com.mysql.cj.jdbc.Driver
+#  url: jdbc:mysql://localhost:3306/mybatis?useSSL=false
+#  username: root
+#  password: qaz050212
+
+
+#数据库
+spring:
+  datasource:
+#    druid专用配置
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/mybatis?useSSL=false
+      username: root
+      password: qaz050212
+#设置mybatisplue相关配置
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tb_
+      id-type: auto
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
