@@ -1,5 +1,3 @@
-server:
-  port: 80
 
 #day02
 #country: china
@@ -37,15 +35,6 @@ server:
 #  password: qaz050212
 
 
-#数据库
-spring:
-  datasource:
-#    druid专用配置
-    druid:
-      driver-class-name: com.mysql.cj.jdbc.Driver
-      url: jdbc:mysql://localhost:3306/mybatis?useSSL=false
-      username: root
-      password: qaz050212
 #设置mybatisplue相关配置
 mybatis-plus:
   global-config:
@@ -55,3 +44,64 @@ mybatis-plus:
 
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+#    多环境
+
+#应用环境
+spring:
+  datasource:
+    #    druid专用配置
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/mybatis?useSSL=false
+      username: root
+      password: qaz050212
+  profiles:
+    active: pro
+#    group:
+#      "dev": devDB,devMVC
+#      "pro": proDB,proMVC    会包含active的pro环境已经pro后面所带有的环境  如果冲突，最后一个生效（MVC）
+#    include: devMVC      包含哪些环境，devMVC代表同级下有一个application-devMVC.yml文件 如果冲突active为主要生效 过时，2.4之后替换为group
+#debug: true  查看debug日志  在bookController中查看级别，设置后查看自己以及后面的相关日志，下面相同
+#logging:
+#  记录日志文件
+#  file:
+#    name: server.log   #文件在项目同级目录下
+#  logback:
+#    rollingpolicy:
+#      max-file-size: 4KB  #设置每个日志文件到达4KB时更换新的文件进行记录
+#      file-name-pattern: server.%d{yyyy-MM-dd}.%i.log  #设置日志文件的名称  d为时间，i为序号  例如server.2022.12.12.02.log
+#  设置分组
+#  group:
+#    ebank: day01.controller
+#    iservice: com.alibaba
+#  level:
+#    同样查看debug以及以下日志
+#    root: debug
+#    为分组设置日志级别
+#    ebank: debug
+
+---
+#设置环境
+#生产环境
+spring:
+  profiles: pro
+server:
+  port: 80
+
+
+---
+#开发环境
+spring:
+  profiles: dev
+server:
+  port: 81
+
+
+---
+#测试环境
+spring:
+  profiles: test
+server:
+  port: 82
+

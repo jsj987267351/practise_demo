@@ -69,7 +69,7 @@
 
 <!--    demo4-->
 <!--    <profiles>-->
-<!--&lt;!&ndash;        开发环境&ndash;&gt;-->
+<!--        开发环境-->
 <!--        <profile>-->
 <!--            <id>dev</id>-->
 <!--            <properties>-->
@@ -77,7 +77,7 @@
 <!--            </properties>-->
 <!--        </profile>-->
 
-<!--&lt;!&ndash;        生产环境&ndash;&gt;-->
+<!--        生产环境-->
 <!--        <profile>-->
 <!--            <id>pro</id>-->
 <!--            <properties>-->
@@ -88,7 +88,7 @@
 <!--            </activation>-->
 <!--        </profile>-->
 
-<!--&lt;!&ndash;        测试环境&ndash;&gt;-->
+<!--        测试环境-->
 <!--        <profile>-->
 <!--            <id>test</id>-->
 <!--            <properties>-->
