@@ -1,0 +1,55 @@
+
+#设置mybatisplus相关配置
+mybatis-plus:
+  global-config:
+    db-config:
+      table-prefix: tb_
+      id-type: auto
+
+  configuration:
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+spring:
+  datasource:
+    #    druid专用配置
+    druid:
+      driver-class-name: com.mysql.cj.jdbc.Driver
+      url: jdbc:mysql://localhost:3306/mybatis?useSSL=false
+      username: root
+      password: qaz050212
+   #  热部署配置
+  devtools:
+    restart:
+      exclude: static/**,public/**
+      enabled: false
+server:
+  port: 80
+#day02
+#servers:
+##  松散绑定   只有@ConfigurationProperties注解才有此类松散绑定
+##  ipaddress: 192.168.0.3
+##  ipAddress: 192.168.0.3
+#  ip-address: 192.168.0.3     #烤肉串模式
+##  ip_address: 192.168.0.3
+##  IPADDRESS: 192.168.0.3
+##  IP_ADDRESS: 192.168.0.3     #常量
+#  port: 800
+#  timeout: -1
+#  serverTimeOut: 3
+#  dataSize: 10MB
+#
+#dataSource:
+#  driverClassName: com.mysql.jdbc.Driver456
+#  password: "0127"  #0开头后为1-7的数字为8进制
+
+#day03
+#test:
+#  prop: testValue
+#testcase:
+#  book:
+#    id: ${random.int}
+#    id2: ${random.int(10)}  #10以内
+#    id3: ${random.int(5,10)}  #5-10
+#    name: 黑马${random.value}
+#    uuid: ${random.uuid}
+#    publishTime: ${random.long}

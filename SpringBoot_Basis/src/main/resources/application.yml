@@ -35,7 +35,7 @@
 #  password: qaz050212
 
 
-#设置mybatisplue相关配置
+#设置mybatisplus相关配置
 mybatis-plus:
   global-config:
     db-config:
