@@ -11,7 +11,7 @@ mybatis-plus:
 
 spring:
   datasource:
-    #    druid专用配置
+    #    druid专用配置    不设置则使用默认数据源Hikari
     druid:
       driver-class-name: com.mysql.cj.jdbc.Driver
       url: jdbc:mysql://localhost:3306/mybatis?useSSL=false
@@ -22,6 +22,15 @@ spring:
     restart:
       exclude: static/**,public/**
       enabled: false
+  #day05 Redis  在Spring下  可写可不写
+  redis:
+    host: localhost
+    port: 6379
+    client-type: jedis    #使用jedis技术  默认为lettuce
+  data:
+#    mongodb配置 在spring.data下
+    mongodb:
+      uri: mongodb://localhost/practise
 server:
   port: 80
 #day02
@@ -53,3 +62,4 @@ server:
 #    name: 黑马${random.value}
 #    uuid: ${random.uuid}
 #    publishTime: ${random.long}
+
