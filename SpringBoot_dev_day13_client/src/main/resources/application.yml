@@ -1,0 +1,26 @@
+spring:
+  boot:
+    admin:
+      client:
+        url: http://localhost:80   #被哪个端口所监控
+server:
+  port: 8080
+
+management:
+  endpoint:
+    health:
+      show-details: always    #健康可查看
+    info:
+      enabled: true   #指定端点可查看
+  endpoints:
+    web:   #web可查看
+      exposure:
+        include: "*"    #可查看所有
+    enabled-by-default: true  #所有端点都开放，默认为true
+
+
+#指定info信息
+info:
+  appName: @project.artifactId@
+  version: @project.version@
+  auther: zcz

@@ -1,0 +1,14 @@
+//package springboot_dev.day12.service.Impl.rabbitmq.direct.listener;
+//
+//import org.springframework.amqp.rabbit.annotation.RabbitListener;
+//import org.springframework.jms.annotation.JmsListener;
+//import org.springframework.stereotype.Component;
+//
+////@Component
+//public class MessageListener {
+//
+//    @RabbitListener(queues = "direct_queue")
+//    public void receive(String id){
+//        System.out.println("已完成短信发送业务(rabbitmq direct)，id：" + id);
+//    }
+//}

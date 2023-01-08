@@ -18,23 +18,36 @@
     </properties>
     <dependencies>
 
-<!--        Redis 可以在创建时直接在nosql中勾选-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-redis</artifactId>
-        </dependency>
+        <!--        Redis 可以在创建时直接在nosql中勾选  开启时需要电脑开启redis-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-data-redis</artifactId>-->
+        <!--        </dependency>-->
 
-<!--        Jedis-->
-        <dependency>
-            <groupId>redis.clients</groupId>
-            <artifactId>jedis</artifactId>
-        </dependency>
+        <!--        Jedis-->
+        <!--        <dependency>-->
+        <!--            <groupId>redis.clients</groupId>-->
+        <!--            <artifactId>jedis</artifactId>-->
+        <!--        </dependency>-->
 
-<!--        Mongodb  可以在创建时直接在nosql中勾选-->
-        <dependency>
-            <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-starter-data-mongodb</artifactId>
-        </dependency>
+        <!--        Mongodb  可以在创建时直接在nosql中勾选-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-data-mongodb</artifactId>-->
+        <!--        </dependency>-->
+
+        <!--        ES  低级别，一般不用，需要在yml中进行配置-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-data-elasticsearch</artifactId>-->
+        <!--        </dependency>-->
+
+        <!--        ES 高级别  在yml中不需要写，yml中只能配低版本的-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.elasticsearch.client</groupId>-->
+        <!--            <artifactId>elasticsearch-rest-high-level-client</artifactId>-->
+        <!--        </dependency>-->
+
 
         <dependency>
             <groupId>org.springframework.boot</groupId>
@@ -95,10 +108,90 @@
         </dependency>
 
         <!--启动热部署-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-devtools</artifactId>-->
+        <!--        </dependency>-->
+
+        <!--        fastjson-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.alibaba</groupId>-->
+        <!--            <artifactId>fastjson</artifactId>-->
+        <!--            <version>1.2.78</version>-->
+        <!--        </dependency>-->
+
+        <!--        cache 缓存-->
+        <!--        <dependency>-->
+        <!--            <groupId>org.springframework.boot</groupId>-->
+        <!--            <artifactId>spring-boot-starter-cache</artifactId>-->
+        <!--        </dependency>-->
+
+        <!--                Ehcache-->
+        <!--        <dependency>-->
+        <!--            <groupId>net.sf.ehcache</groupId>-->
+        <!--            <artifactId>ehcache</artifactId>-->
+        <!--        </dependency>-->
+
+        <!--        memcached-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.googlecode.xmemcached</groupId>-->
+        <!--            <artifactId>xmemcached</artifactId>-->
+        <!--            <version>2.4.7</version>-->
+        <!--        </dependency>-->
+
+        <!--        jetcache  且自带fastjson包-->
+        <!--        <dependency>-->
+        <!--            <groupId>com.alicp.jetcache</groupId>-->
+        <!--            <artifactId>jetcache-starter-redis</artifactId>-->
+        <!--            <version>2.6.2</version>-->
+        <!--        </dependency>-->
+
+        <!--j2cache 以下两个包都是  需要把Ehcache一起打开-->
+        <!--        <dependency>-->
+        <!--            <groupId>net.oschina.j2cache</groupId>-->
+        <!--            <artifactId>j2cache-core</artifactId>-->
+        <!--            <version>2.8.4-release</version>-->
+        <!--        </dependency>-->
+
+        <!--        <dependency>-->
+        <!--            <groupId>net.oschina.j2cache</groupId>-->
+        <!--            <artifactId>j2cache-spring-boot2-starter</artifactId>-->
+        <!--            <version>2.8.0-release</version>-->
+        <!--        </dependency>-->
+
+        <!--        quartz 任务day10-->
         <dependency>
             <groupId>org.springframework.boot</groupId>
-            <artifactId>spring-boot-devtools</artifactId>
+            <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
+        <!--       day11 邮件 -->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-mail</artifactId>-->
+<!--        </dependency>-->
+        <!--   day12     activemq-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-activemq</artifactId>-->
+<!--        </dependency>-->
+        <!--    day12    rabbitmq-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.boot</groupId>-->
+<!--            <artifactId>spring-boot-starter-amqp</artifactId>-->
+<!--        </dependency>-->
+        <!--   day12     kafka-->
+<!--        <dependency>-->
+<!--            <groupId>org.springframework.kafka</groupId>-->
+<!--            <artifactId>spring-kafka</artifactId>-->
+<!--        </dependency>-->
+
+        <!--        day13 监控 springboot admin  可以在创建时在ops中勾选  自己写的话需要版本与springboot版本相同-->
+        <dependency>
+            <groupId>de.codecentric</groupId>
+            <artifactId>spring-boot-admin-starter-server</artifactId>
+            <version>2.5.4</version>
+        </dependency>
+
     </dependencies>
 
     <build>

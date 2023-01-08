@@ -1,4 +1,3 @@
-
 #设置mybatisplus相关配置
 mybatis-plus:
   global-config:
@@ -17,22 +16,68 @@ spring:
       url: jdbc:mysql://localhost:3306/mybatis?useSSL=false
       username: root
       password: qaz050212
-   #  热部署配置
+    #  热部署配置
   devtools:
     restart:
       exclude: static/**,public/**
       enabled: false
   #day05 Redis  在Spring下  可写可不写
-  redis:
-    host: localhost
-    port: 6379
-    client-type: jedis    #使用jedis技术  默认为lettuce
+  #  redis:
+  #    host: localhost
+  #    port: 6379
+  #    client-type: jedis    #使用jedis技术  默认为lettuce
   data:
+  #day10 任务 spring task
+  task:
+    execution:
+      thread-name-prefix: spring_task_   #调试使用，定义线程名称，在day10.quartz.MyBean中体现
+  #day11 邮件
+  mail:
+    host: smtp.qq.com
+    username: 987267351@qq.com
+    password: guppcmxyzdsobffe
+  #day12 activemq
+#  activemq:
+#    broker-url: tcp://localhost:61616
+  #    day12 消息存放位置   也可以在存放的时候设置位置，在day12.service.impl.activemq.mess??中可查看
+#  jms:
+#    template:
+#      default-destination: aaa
+    #  设置发布订阅的模式，否则则是点对点
+#    pub-sub-domain: true
+  #day12 rabbitmq
+#  rabbitmq:
+#    host: localhost
+#    port: 5672
+    #day12  kafka
+#  kafka:
+#    bootstrap-servers: localhost:9092
+#    consumer:
+#      group-id: order
+
+#day07 Redis
+#  cache:
+#    type: redis
+#    redis:
+#      use-key-prefix: true   #是否使用前缀，即cache空间名
+#      cache-null-values: false   #是否缓存空值
+#      key-prefix: sms_        #指定key前缀  即sms_加上cache空间名
+#      time-to-live: 10s   #最大存活时间
+
+#day07 Ehcache
+#  cache:
+#    type: ehcache
 #    mongodb配置 在spring.data下
-    mongodb:
-      uri: mongodb://localhost/practise
+#    mongodb:
+#      uri: mongodb://localhost/practise
+
+#day06 ES  低级别，与pom中低级别配套使用，一般不用
+#  elasticsearch:
+#    rest:
+#      uris: http://localhost:9200
 server:
   port: 80
+
 #day02
 #servers:
 ##  松散绑定   只有@ConfigurationProperties注解才有此类松散绑定
@@ -47,6 +92,7 @@ server:
 #  serverTimeOut: 3
 #  dataSize: 10MB
 #
+
 #dataSource:
 #  driverClassName: com.mysql.jdbc.Driver456
 #  password: "0127"  #0开头后为1-7的数字为8进制
@@ -62,4 +108,46 @@ server:
 #    name: 黑马${random.value}
 #    uuid: ${random.uuid}
 #    publishTime: ${random.long}
+
+
+#配置XMemcachedProperties中的值
+#memcached:
+#  servers: localhost:11211
+#  poolSize: 10
+#  opTimeout: 3000
+
+#day08 jetcache
+#jetcache:
+#  statIntervalMinutes: 1    #每过一分钟在控制台显示统计数据,即使用了多少次什么功能，命中缓存几次之类
+##  本地方案  也可以本地远程只配置一个
+#  local:
+#    default:
+#      type: linkedhashmap
+#      keyConvertor: fastjson
+
+#  远程方案
+#  remote:
+#    default:
+#      type: redis
+#      host: localhost
+#      port: 6379
+#      keyConvertor: fastjson
+##      实现序列化
+#      valueEncode: java
+#      valueDecode: java
+#      poolConfig:
+#        maxTotal: 50
+#    sms:
+#      type: redis
+#      host: localhost
+#      port: 6379
+#      poolConfig:
+#        maxTotal: 50
+
+#day09 j2cache
+#j2cache:
+#  config-location: j2cache.properties
+
+
+
 
