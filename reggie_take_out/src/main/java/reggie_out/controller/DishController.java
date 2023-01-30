@@ -1,7 +1,7 @@
 package reggie_out.controller;
 
 
-import com.alibaba.druid.sql.ast.expr.SQLCaseExpr;
+
 import com.baomidou.mybatisplus.core.conditions.query.LambdaQueryWrapper;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.extern.slf4j.Slf4j;
@@ -12,10 +12,12 @@ import reggie_out.common.R;
 import reggie_out.dto.DishDto;
 import reggie_out.pojo.Category;
 import reggie_out.pojo.Dish;
+import reggie_out.pojo.DishFlavor;
 import reggie_out.service.CategoryService;
 import reggie_out.service.DishFlavorService;
 import reggie_out.service.DishService;
 
+import java.util.ArrayList;
 import java.util.List;
 import java.util.stream.Collectors;
 
@@ -97,11 +99,12 @@ public class DishController {
 
     /**
      * 根据id查询菜品信息和口味信息
+     *
      * @param id
      * @return
      */
     @GetMapping("/{id}")
-    public R<DishDto> get(@PathVariable Long id){
+    public R<DishDto> get(@PathVariable Long id) {
 
         DishDto dishDto = dishService.getByIdWithFlavor(id);
 
@@ -110,14 +113,69 @@ public class DishController {
 
     /**
      * 修改菜品
+     *
      * @param dishDto
      * @return
      */
     @PutMapping
-    public R<String> update(@RequestBody DishDto dishDto){
+    public R<String> update(@RequestBody DishDto dishDto) {
 
         dishService.updateWithFlavor(dishDto);
 
         return R.success("新增菜品成功");
+    }
+
+//    /**
+//     * 根据条件查询菜品数据
+//     * @param dish
+//     * @return
+//     */
+//    @GetMapping("/list")
+//    public R<List<Dish>> list(Dish dish){
+////        构造查询条件
+//        LambdaQueryWrapper<Dish>lambdaQueryWrapper  = new LambdaQueryWrapper<>();
+//        lambdaQueryWrapper.eq(dish.getCategoryId()!=null,Dish::getCategoryId,dish.getCategoryId());
+////        添加条件，查询状态为1（起售状态）的菜品
+//        lambdaQueryWrapper.eq(Dish::getStatus,1);
+////        添加排序条件
+//        lambdaQueryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+//        List<Dish> list = dishService.list(lambdaQueryWrapper);
+//        return R.success(list);
+//    }
+
+    /**
+     * 根据条件查询菜品数据
+     *
+     * @param dish
+     * @return
+     */
+    @GetMapping("/list")
+    public R<List<DishDto>> list(Dish dish) {
+//        构造查询条件
+        LambdaQueryWrapper<Dish> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(dish.getCategoryId() != null, Dish::getCategoryId, dish.getCategoryId());
+//        添加条件，查询状态为1（起售状态）的菜品
+        lambdaQueryWrapper.eq(Dish::getStatus, 1);
+//        添加排序条件
+        lambdaQueryWrapper.orderByAsc(Dish::getSort).orderByDesc(Dish::getUpdateTime);
+        List<Dish> list = dishService.list(lambdaQueryWrapper);
+        List<DishDto> dtoList = new ArrayList<>();
+        for (Dish dish1 : list) {
+            DishDto dishDto = new DishDto();
+            BeanUtils.copyProperties(dish1, dishDto);
+            Long categoryId = dish1.getCategoryId();
+            Category category = categoryService.getById(categoryId);
+            if (category != null) {
+                String categoryName = category.getName();
+                dishDto.setCategoryName(categoryName);
+            }
+            Long id = dish1.getId();
+            LambdaQueryWrapper<DishFlavor> queryWrapper = new LambdaQueryWrapper<>();
+            queryWrapper.eq(DishFlavor::getDishId, id);
+            List<DishFlavor> dishFlavors = dishFlavorService.list(queryWrapper);
+            dishDto.setFlavors(dishFlavors);
+            dtoList.add(dishDto);
+        }
+        return R.success(dtoList);
     }
 }
