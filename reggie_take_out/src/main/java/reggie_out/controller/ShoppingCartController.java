@@ -8,6 +8,8 @@ import org.springframework.web.bind.annotation.*;
 import reggie_out.common.BaseContext;
 import reggie_out.common.R;
 import reggie_out.pojo.ShoppingCart;
+import reggie_out.service.DishService;
+import reggie_out.service.SetMealService;
 import reggie_out.service.ShoppingCartService;
 
 import java.time.LocalDateTime;
@@ -63,13 +65,14 @@ public class ShoppingCartController {
 
     /**
      * 查看购物车
+     *
      * @return
      */
     @GetMapping("/list")
-    public R<List<ShoppingCart>> list(){
+    public R<List<ShoppingCart>> list() {
         Long currentId = BaseContext.getCurrentId();
         LambdaQueryWrapper<ShoppingCart> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-        lambdaQueryWrapper.eq(ShoppingCart::getUserId,currentId);
+        lambdaQueryWrapper.eq(ShoppingCart::getUserId, currentId);
         lambdaQueryWrapper.orderByAsc(ShoppingCart::getCreateTime);
         List<ShoppingCart> list = shoppingCartService.list(lambdaQueryWrapper);
         return R.success(list);
@@ -77,14 +80,45 @@ public class ShoppingCartController {
 
     /**
      * 清空购物车
+     *
      * @return
      */
     @DeleteMapping("/clean")
-    public R<String> clean(){
+    public R<String> clean() {
         Long currentId = BaseContext.getCurrentId();
         LambdaQueryWrapper<ShoppingCart> lambdaQueryWrapper = new LambdaQueryWrapper<>();
-        lambdaQueryWrapper.eq(ShoppingCart::getUserId,currentId);
+        lambdaQueryWrapper.eq(ShoppingCart::getUserId, currentId);
         shoppingCartService.remove(lambdaQueryWrapper);
         return R.success("清空购物车成功");
+    }
+
+    /**
+     * 减少数量
+     * @param shoppingCart
+     * @return
+     */
+    @PostMapping("/sub")
+    public R<String> sub(@RequestBody ShoppingCart shoppingCart) {
+
+        Long currentId = BaseContext.getCurrentId();
+        shoppingCart.setUserId(currentId);
+        Long dishId = shoppingCart.getDishId();
+        LambdaQueryWrapper<ShoppingCart> lambdaQueryWrapper = new LambdaQueryWrapper<>();
+        lambdaQueryWrapper.eq(ShoppingCart::getUserId,currentId);
+        if(dishId!=null){
+            lambdaQueryWrapper.eq(ShoppingCart::getDishId,dishId);
+        }else {
+            lambdaQueryWrapper.eq(ShoppingCart::getSetmealId,shoppingCart.getSetmealId());
+        }
+        ShoppingCart shoppingCart1 = shoppingCartService.getOne(lambdaQueryWrapper);
+        Integer number = shoppingCart1.getNumber();
+        if(number>1){
+            number--;
+            shoppingCart1.setNumber(number);
+            shoppingCartService.updateById(shoppingCart1);
+        }else {
+            shoppingCartService.removeById(shoppingCart1);
+        }
+        return R.success("成功");
     }
 }

@@ -45,7 +45,7 @@ public class SetmealController {
     public R<String> save(@RequestBody SetmealDto setmealDto){
         log.info("套餐信息:{}",setmealDto);
         setMealService.saveWithDish(setmealDto);
-        return null;
+        return R.success("添加套餐成功");
     }
 
 
@@ -132,4 +132,19 @@ public class SetmealController {
         return R.success(list);
     }
 
+    /**
+     * 修改状态
+     * @param status
+     * @param ids
+     * @return
+     */
+    @PostMapping("/status/{status}")
+    public R<String> status(@PathVariable int status  ,Long[] ids){
+        for (Long id :ids){
+            Setmeal setmeal = setMealService.getById(id);
+            setmeal.setStatus(status);
+            setMealService.updateById(setmeal);
+        }
+        return R.success("修改状态成功");
+    }
 }

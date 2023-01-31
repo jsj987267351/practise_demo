@@ -178,4 +178,33 @@ public class DishController {
         }
         return R.success(dtoList);
     }
+
+    /**
+     * 修改菜品状态
+     * @param status
+     * @param ids
+     * @return
+     */
+   @PostMapping("/status/{status}")
+    public R<String> status(@PathVariable int status ,Long[] ids){
+        for (long id :ids){
+            Dish dish = dishService.getById(id);
+            dish.setStatus(status);
+            dishService.updateById(dish);
+        }
+        return R.success("成功");
+   }
+
+    /**
+     * 删除
+     * @param ids
+     * @return
+     */
+   @DeleteMapping
+    public R<String> delete(Long[] ids){
+       for (Long id :ids){
+           dishService.removeById(id);
+       }
+       return R.success("删除成功");
+   }
 }
