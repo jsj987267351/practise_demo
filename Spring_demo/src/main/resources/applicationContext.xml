@@ -10,105 +10,105 @@
        http://www.springframework.org/schema/context/spring-context.xsd
         ">
 
-    <!--    day01.day01  practise01   初学-->
+    <!--    day01.demo1  practise01   初学-->
     <!--        1.导入spring坐标-->
     <!--    2.配置bean-->
-    <!--    <bean  id="bookDao" name="dao" class="day01.day01.practise01.dao.impl.BookDaoImpl"/>-->
+    <!--    <bean  id="bookDao" name="dao" class="day01.demo1.practise01.dao.impl.BookDaoImpl"/>-->
 
-    <!--    <bean id="bookService" class="day01.day01.practise01.service.impl.BookServiceImpl">-->
+    <!--    <bean id="bookService" class="day01.demo1.practise01.service.impl.BookServiceImpl">-->
     <!--   7.配置service与dao的关系;-->
     <!--       property标签表示配置当前bean的属性，name就是set方法里的对象    ref表示参照哪一个bean  //第9行&ndash;&gt;-->
     <!--        <property name="bookDao" ref="bookDao" />-->
     <!--    </bean>-->
 
 
-    <!--    day01.day01  practise02   名字和范围注入-->
+    <!--    day01.demo1  practise02   名字和范围注入-->
     <!--scope范围，默认为singleton,为同一个bean-->
-    <!--    <bean  id="bookDao" name="dao" class="day01.day01.practise02.mapper.impl.BookDaoImpl" scope="prototype"/>-->
-    <!--    <bean id="bookService" name="service service2" class="day01.day01.practise02.service.impl.BookServiceImpl">-->
+    <!--    <bean  id="bookDao" name="dao" class="day01.demo1.practise02.mapper.impl.BookDaoImpl" scope="prototype"/>-->
+    <!--    <bean id="bookService" name="service service2" class="day01.demo1.practise02.service.impl.BookServiceImpl">-->
     <!--    property标签表示配置当前bean的属性，name就是set方法里的对象    ref表示参照哪一个bean  //第9行&ndash;&gt;-->
     <!--        <property name="bookDao" ref="bookDao" />-->
     <!--    </bean>-->
 
 
-    <!--    day01.day01  practise03    创建bean方法-->
+    <!--    day01.demo1  practise03    创建bean方法-->
     <!--    方式一：构造方法实例化bean-->
-    <!--    <bean  id="bookDao" class="day01.day01.practise03.dao.impl.BookDaoImpl" />-->
+    <!--    <bean  id="bookDao" class="day01.demo1.practise03.dao.impl.BookDaoImpl" />-->
 
     <!--    方式二：使用静态工厂实例化-->
-    <!--    <bean id="orderDao" class="day01.day01.practise03.factory.OrderDaoFactory" factory-method="getOrderDao"/>-->
+    <!--    <bean id="orderDao" class="day01.demo1.practise03.factory.OrderDaoFactory" factory-method="getOrderDao"/>-->
 
     <!--    方式三：使用实例工厂实例化bean-->
-    <!--            <bean id="userFactory" class="day01.day01.practise03.factory.UserDaoFactory"/>-->
+    <!--            <bean id="userFactory" class="day01.demo1.practise03.factory.UserDaoFactory"/>-->
     <!--            <bean id="userDao" factory-bean="userFactory" factory-method="getUserDao"/>-->
 
     <!--    方式四：使用FactoryBean 实例化bean-->
-    <!--    <bean id="userDao" class="day01.day01.practise03.factory.UserDaoFactoryBean"/>-->
+    <!--    <bean id="userDao" class="day01.demo1.practise03.factory.UserDaoFactoryBean"/>-->
 
 
-    <!--    day01.day01  practise04    生命周期-->
-    <!--    <bean id="bookDao" class="day01.day01.practise04.dao.impl.BookDaoImpl" init-method="init" destroy-method="destory"/>-->
+    <!--    day01.demo1  practise04    生命周期-->
+    <!--    <bean id="bookDao" class="day01.demo1.practise04.dao.impl.BookDaoImpl" init-method="init" destroy-method="destory"/>-->
 
-    <!--    <bean id="bookService" class="day01.day01.practise04.service.impl.BookServiceImpl">-->
+    <!--    <bean id="bookService" class="day01.demo1.practise04.service.impl.BookServiceImpl">-->
     <!--        <property name="bookDao" ref="bookDao"/>-->
     <!--    </bean>-->
 
 
-    <!--    day01.day01  practise05      setter赋值-->
-    <!--    <bean  id="bookDao" class="day01.day01.practise05.dao.impl.BookDaoImpl">-->
+    <!--    day01.demo1  practise05      setter赋值-->
+    <!--    <bean  id="bookDao" class="day01.demo1.practise05.dao.impl.BookDaoImpl">-->
     <!--        <property name="connectionNum" value="10"/>-->
     <!--        <property name="databaseName" value="mysql"/>-->
     <!--    </bean>-->
-    <!--    <bean  id="userDao" class="day01.day01.practise05.dao.impl.UserDaoImpl"/>-->
+    <!--    <bean  id="userDao" class="day01.demo1.practise05.dao.impl.UserDaoImpl"/>-->
 
-    <!--    <bean id="bookService" class="day01.day01.practise05.service.impl.BookServiceImpl">-->
+    <!--    <bean id="bookService" class="day01.demo1.practise05.service.impl.BookServiceImpl">-->
     <!--        <property name="bookDao" ref="bookDao"/>-->
     <!--        <property name="UserDao" ref="userDao"/>-->
     <!--    </bean>-->
 
 
-    <!--    day01.day01  practise06      构造器赋值-->
+    <!--    day01.demo1  practise06      构造器赋值-->
     <!--    标准书写-->
-    <!--    <bean id="bookDao" class="day01.day01.practise06.dao.impl.BookDaoImpl">-->
+    <!--    <bean id="bookDao" class="day01.demo1.practise06.dao.impl.BookDaoImpl">-->
     <!--        <constructor-arg name="databaseName" value="mysql"/>-->
     <!--        <constructor-arg name="connectionNum" value="666"/>-->
     <!--    </bean>-->
-    <!--    <bean id="userDao" class="day01.day01.practise06.dao.impl.UserDaoImpl"/>-->
+    <!--    <bean id="userDao" class="day01.demo1.practise06.dao.impl.UserDaoImpl"/>-->
 
-    <!--    <bean id="bookService" class="day01.day01.practise06.service.impl.BookServiceImpl">-->
+    <!--    <bean id="bookService" class="day01.demo1.practise06.service.impl.BookServiceImpl">-->
     <!--        <constructor-arg name="bookDao" ref="bookDao"/>-->
     <!--        <constructor-arg name="userDao" ref="userDao"/>-->
     <!--    </bean>-->
     <!--   解决形参名称类型，用类型 -->
-    <!--    <bean id="bookDao" class="day01.day01.practise06.dao.impl.BookDaoImpl">-->
+    <!--    <bean id="bookDao" class="day01.demo1.practise06.dao.impl.BookDaoImpl">-->
     <!--        <constructor-arg type="java.lang.String" value="mysql"/>-->
     <!--        <constructor-arg type="int" value="666"/>-->
     <!--    </bean>-->
-    <!--    <bean id="userDao" class="day01.day01.practise06.dao.impl.UserDaoImpl"/>-->
+    <!--    <bean id="userDao" class="day01.demo1.practise06.dao.impl.UserDaoImpl"/>-->
 
-    <!--    <bean id="bookService" class="day01.day01.practise06.service.impl.BookServiceImpl">-->
+    <!--    <bean id="bookService" class="day01.demo1.practise06.service.impl.BookServiceImpl">-->
     <!--        <constructor-arg name="bookDao" ref="bookDao"/>-->
     <!--        <constructor-arg name="userDao" ref="userDao"/>-->
     <!--    </bean>-->
     <!--    解决参数类型重复问题用位置 -->
-    <!--    <bean id="bookDao" class="day01.day01.practise06.dao.impl.BookDaoImpl">-->
+    <!--    <bean id="bookDao" class="day01.demo1.practise06.dao.impl.BookDaoImpl">-->
     <!--        <constructor-arg  index="0" value="mysql"/>-->
     <!--        <constructor-arg  index="1" value="666"/>-->
     <!--    </bean>-->
-    <!--    <bean id="userDao" class="day01.day01.practise06.dao.impl.UserDaoImpl"/>-->
+    <!--    <bean id="userDao" class="day01.demo1.practise06.dao.impl.UserDaoImpl"/>-->
 
-    <!--    <bean id="bookService" class="day01.day01.practise06.service.impl.BookServiceImpl">-->
+    <!--    <bean id="bookService" class="day01.demo1.practise06.service.impl.BookServiceImpl">-->
     <!--        <constructor-arg name="bookDao" ref="bookDao"/>-->
     <!--        <constructor-arg name="userDao" ref="userDao"/>-->
     <!--    </bean>-->
     <!--    -->
 
-    <!--    day01.day01  practise07     自动注入-->
-<!--    <bean id="bookDao" class="day01.day01.practise07.dao.impl.BookDaoImpl"/>-->
-<!--    <bean id="bookService" class="day01.day01.practise07.service.impl.BookServiceImpl" autowire="byType"/>-->
+    <!--    day01.demo1  practise07     自动注入-->
+<!--    <bean id="bookDao" class="day01.demo1.practise07.dao.impl.BookDaoImpl"/>-->
+<!--    <bean id="bookService" class="day01.demo1.practise07.service.impl.BookServiceImpl" autowire="byType"/>-->
 
-    <!--    day01.day01  practise08      集合注入-->
-<!--    <bean id="bookDao" class="day01.day01.practise08.dao.impl.BookDaoImpl">-->
+    <!--    day01.demo1  practise08      集合注入-->
+<!--    <bean id="bookDao" class="day01.demo1.practise08.dao.impl.BookDaoImpl">-->
 <!--        <property name="array">-->
 <!--            <array>-->
 <!--                <value>100</value>-->
