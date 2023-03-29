@@ -8,6 +8,7 @@ package day10;
  */
 public class demo2 {
     public void rotate1(int[] nums, int k) {
+        k = k % nums.length;
         int[] result = new int[nums.length + k];
         for (int i = 0; i < nums.length; i++) {
             result[i + k] = nums[i];

@@ -16,6 +16,5 @@ public class demo1 {
         Arrays.sort(nums);
         return nums;
     }
-
 }
 
