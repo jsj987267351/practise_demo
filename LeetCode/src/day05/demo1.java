@@ -8,6 +8,7 @@ package day05;
  * 数字1-9在每一行只能出现一次。
  * 数字1-9在每一列只能出现一次。
  * 数字1-9在每一个以粗实线分隔的3x3宫内只能出现一次。
+ * https://leetcode.cn/problems/valid-sudoku/
  */
 public class demo1 {
     public boolean isValidSudoku(char[][] board) {

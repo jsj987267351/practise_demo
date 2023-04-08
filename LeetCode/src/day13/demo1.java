@@ -7,6 +7,7 @@ import java.util.LinkedList;
  * @version 1.0
  * @description 给定一个只包括 '('，')'，'{'，'}'，'['，']' 的字符串 s ，判断字符串是否有效。
  * @date 2023/3/31 13:20
+ * https://leetcode.cn/problems/valid-parentheses/
  */
 public class demo1 {
     public boolean isValid(String s) {

@@ -5,6 +5,7 @@ package day11.demo2;
  * @version 1.0
  * @description 给你一个单链表的头节点 head ，请你判断该链表是否为回文链表。如果是，返回 true ；否则，返回 false 。
  * @date 2023/3/29 13:40
+ * https://leetcode.cn/problems/palindrome-linked-list/
  */
 
 public class demo2 {

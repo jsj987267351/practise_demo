@@ -7,6 +7,7 @@ package day16.demo2;
  * <p>
  * 如果有两个中间结点，则返回第二个中间结点。
  * @date 2023/4/4 12:31
+ * https://leetcode.cn/problems/middle-of-the-linked-list/
  */
 public class demo {
     public ListNode middleNode(ListNode head) {

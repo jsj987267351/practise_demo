@@ -4,6 +4,7 @@ package day13;
  * @author ：大爆炸
  * @version 1.0
  * @description 给你一个下标从 1 开始的整数数组 numbers ，该数组已按 非递减顺序排列  ，请你从数组中找出满足相加之和等于目标数 target 的两个数
+ * https://leetcode.cn/problems/two-sum-ii-input-array-is-sorted/
  * @date 2023/3/31 14:07
  */
 public class demo2 {

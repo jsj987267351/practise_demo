@@ -5,6 +5,7 @@ package day08.demo1;
  * @return
  * @author 大爆炸
  * @date 2023/3/24 19:54
+ * https://leetcode.cn/problems/reverse-linked-list/
  */
 
 public class demo {

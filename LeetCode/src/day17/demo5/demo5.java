@@ -5,6 +5,7 @@ package day17.demo5;
  * @version 1.0
  * @description 定义一个函数，输入一个链表的头节点，反转该链表并输出反转后链表的头节点。
  * @date 2023/4/6 11:54
+ * https://leetcode.cn/problems/fan-zhuan-lian-biao-lcof/
  */
 public class demo5 {
     public ListNode reverseList(ListNode head) {

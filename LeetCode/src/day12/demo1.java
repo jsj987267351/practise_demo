@@ -11,6 +11,7 @@ import java.util.UUID;
  * <p>
  * 不要使用额外的数组空间，你必须仅使用 O(1) 额外空间并 原地 修改输入数组
  * @date 2023/3/30 11:24
+ * https://leetcode.cn/problems/remove-element/
  */
 public class demo1 {
     public int removeElement(int[] nums, int val) {

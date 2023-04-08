@@ -9,6 +9,7 @@ import java.util.Arrays;
  * <p>
  * 如果不存在公共前缀，返回空字符串 ""。
  * @date 2023/4/7 15:20
+ *https://leetcode.cn/problems/longest-common-prefix/
  */
 public class demo1 {
     public String longestCommonPrefix(String[] strs) {

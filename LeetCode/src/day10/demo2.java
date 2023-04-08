@@ -5,6 +5,7 @@ package day10;
  * @version 1.0
  * @description 给定一个整数数组 nums，将数组中的元素向右轮转 k 个位置，其中 k 是非负数。
  * @date 2023/3/26 15:42
+ * https://leetcode.cn/problems/rotate-array/
  */
 public class demo2 {
     public void rotate1(int[] nums, int k) {

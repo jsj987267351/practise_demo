@@ -10,6 +10,7 @@ import java.util.HashMap;
  * <p>
  * 你必须设计并实现线性时间复杂度的算法来解决此问题，且该算法只使用常量额外空间。
  * @date 2023/4/1 20:28
+ * https://leetcode.cn/problems/single-number/
  */
 public class demo2 {
     public int singleNumber1(int[] nums) {

@@ -7,6 +7,7 @@ package day18;
  * <p>
  * 由于返回类型是整数，结果只保留 整数部分 ，小数部分将被 舍去 。
  * @date 2023/4/7 15:48
+ * https://leetcode.cn/problems/sqrtx/
  */
 public class demo2 {
     public int mySqrt(int x) {

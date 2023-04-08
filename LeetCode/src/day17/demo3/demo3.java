@@ -10,6 +10,7 @@ import java.util.List;
  * @version 1.0
  * @description 输入一个链表的头节点，从尾到头反过来返回每个节点的值（用数组返回）。
  * @date 2023/4/6 11:15
+ * https://leetcode.cn/problems/cong-wei-dao-tou-da-yin-lian-biao-lcof/
  */
 public class demo3 {
     public int[] reversePrint(ListNode head) {

@@ -5,6 +5,7 @@ package day17;
  * @version 1.0
  * @description 请实现一个函数，把字符串 s 中的每个空格替换成"%20"。
  * @date 2023/4/6 10:59
+ * https://leetcode.cn/problems/ti-huan-kong-ge-lcof/
  */
 public class demo2 {
     public String replaceSpace1(String s) {

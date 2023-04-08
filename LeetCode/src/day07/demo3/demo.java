@@ -9,6 +9,7 @@ package day07.demo3;
  * *     ListNode(int val) { this.val = val; }
  * *     ListNode(int val, ListNode next) { this.val = val; this.next = next; }
  * * }
+ * https://leetcode.cn/problems/remove-linked-list-elements/
  */
 public class demo {
     public ListNode removeElements(ListNode head, int val) {

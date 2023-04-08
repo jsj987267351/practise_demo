@@ -7,6 +7,7 @@ package day17.demo4;
  *
  * 例如，一个链表有 6 个节点，从头节点开始，它们的值依次是 1、2、3、4、5、6。这个链表的倒数第 3 个节点是值为 4 的节点。
  * @date 2023/4/6 11:42
+ * https://leetcode.cn/problems/lian-biao-zhong-dao-shu-di-kge-jie-dian-lcof/
  */
 public class demo4 {
     public ListNode getKthFromEnd(ListNode head, int k) {

@@ -5,6 +5,7 @@ package day15.demo2;
  * @version 1.0
  * @description 给你两个单链表的头节点 headA 和 headB ，请你找出并返回两个单链表相交的起始节点。如果两个链表不存在相交节点，返回 null 。
  * @date 2023/4/2 20:26
+ * https://leetcode.cn/problems/intersection-of-two-linked-lists/
  */
 public class demo2 {
     public ListNode getIntersectionNode(ListNode headA, ListNode headB) {
