@@ -25,5 +25,7 @@ public class demo4 {
         p.next = p.next.next;
         return sen.next;
     }
+
+
 }
 
