@@ -32,7 +32,7 @@ public class demo3 {
             return;
         }
 
-        for (int i = startIndex; i <= n; i++) {
+        for (int i = startIndex; i <= n-(k-path.size())+1; i++) {
             path.offer(i);
             backtracking(result, path, n, k, i + 1);
             path.removeLast();
