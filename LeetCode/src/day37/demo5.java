@@ -41,6 +41,7 @@ public class demo5 {
             result.add(stringBuilder.toString());
             return;
         }
+
         int digit = digits.charAt(index) - '0';
 
         String string = strings[digit];
