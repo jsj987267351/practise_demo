@@ -32,6 +32,7 @@ public class demo3 {
                 dp[i][j] = dp[i-1][j] + dp[i][j-1];
             }
         }
+        System.out.println("aaa");
 //        最右下角数组的数则是最终结果
         return dp[m-1][n-1];
     }
