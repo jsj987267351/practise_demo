@@ -42,5 +42,6 @@ public class demo4 {
             temp.removeLast();
         }
     }
+
 }
 
