@@ -9,7 +9,7 @@ package day08.demo1;
  */
 
 public class demo {
-    public ListNode reverseList(ListNode head) {
+    public ListNode reverseList1(ListNode head) {
         ListNode pre = null;
         ListNode temp = null;
         while (head != null) {
@@ -21,4 +21,21 @@ public class demo {
         return pre;
     }
 
+    public ListNode reverseList(ListNode head) {
+        if (head ==null){
+            return null;
+        }
+        ListNode sen = new ListNode(0,head);
+        ListNode temp = head.next;
+        head.next = null;
+        head = temp;
+
+        while (head != null) {
+            temp = head.next;
+            head.next = sen.next;
+            sen.next = head;
+            head = temp;
+        }
+        return sen.next;
+    }
 }
