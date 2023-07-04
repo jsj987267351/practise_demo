@@ -12,7 +12,7 @@ package day36;
  * @date 2023/5/7 16:13
  */
 public class demo3 {
-    public int maxProfit(int[] prices) {
+    public int maxProfit1(int[] prices) {
         int sum = 0;
         int low = prices[0];
 
@@ -23,6 +23,26 @@ public class demo3 {
             low = prices[i];
         }
         return sum;
+    }
+
+
+    public int maxProfit(int[] prices) {
+//        dp[0]表示当天持有股票  dp[1]表示当天不持有股票
+        int[] dp = new int[2];
+        dp[0] = -prices[0];
+        dp[1] = 0;
+
+        for (int i = 1; i <prices.length ; i++) {
+//            当天持有股票的情况：
+//            1.前一天也持有股票，说明当天没卖，即与前一天相同
+//            2.前一天未持有股票，说明今天买了股票，就要在前一天未持有股票的基础上买上今天的股票，即减去当天股票的价格
+            dp[0] = Math.max(dp[0],dp[1] - prices[i]);
+//            同理,如果前一天有股票，而今天不持有股票，说明今天把股票卖了，就要在前一天持有股票的总资金的基础上加上今天的股票价格
+            dp[1] = Math.max(dp[1],dp[0] + prices[i]);
+        }
+
+//        最后肯定是当天不持有股票的价格更高，毕竟卖出去了
+        return dp[1];
     }
 }
 
