@@ -1,8 +1,7 @@
 package practise16.service;
 
-import day02.practise16.demo.config.SpringConfig;
-import day02.practise16.demo.pojo.Account;
-import day02.practise16.demo.service.AccountService;
+import day2023_03_18.practise16.demo.config.SpringConfig;
+import day2023_03_18.practise16.demo.service.AccountService;
 import org.junit.Test;
 import org.junit.runner.RunWith;
 import org.springframework.beans.factory.annotation.Autowired;

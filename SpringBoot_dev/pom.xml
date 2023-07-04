@@ -164,28 +164,28 @@
             <groupId>org.springframework.boot</groupId>
             <artifactId>spring-boot-starter-quartz</artifactId>
         </dependency>
-        <!--       day11 邮件 -->
+        <!--       day2023_03_29 邮件 -->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->
 <!--            <artifactId>spring-boot-starter-mail</artifactId>-->
 <!--        </dependency>-->
-        <!--   day12     activemq-->
+        <!--   day2023_03_30     activemq-->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->
 <!--            <artifactId>spring-boot-starter-activemq</artifactId>-->
 <!--        </dependency>-->
-        <!--    day12    rabbitmq-->
+        <!--    day2023_03_30    rabbitmq-->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.boot</groupId>-->
 <!--            <artifactId>spring-boot-starter-amqp</artifactId>-->
 <!--        </dependency>-->
-        <!--   day12     kafka-->
+        <!--   day2023_03_30     kafka-->
 <!--        <dependency>-->
 <!--            <groupId>org.springframework.kafka</groupId>-->
 <!--            <artifactId>spring-kafka</artifactId>-->
 <!--        </dependency>-->
 
-        <!--        day13 监控 springboot admin  可以在创建时在ops中勾选  自己写的话需要版本与springboot版本相同-->
+        <!--        day2023_03_31 监控 springboot admin  可以在创建时在ops中勾选  自己写的话需要版本与springboot版本相同-->
         <dependency>
             <groupId>de.codecentric</groupId>
             <artifactId>spring-boot-admin-starter-server</artifactId>
