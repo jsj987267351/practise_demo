@@ -7,7 +7,7 @@ import java.util.PriorityQueue;
  * @author ：大爆炸
  * @version 1.0
  * @description https://leetcode.cn/problems/find-median-from-data-stream/?envType=study-plan-v2&envId=top-100-liked
-// *   解题https://www.bilibili.com/video/BV1Lv4y1e7HL?p=143&vd_source=943ca493b937adf4b7a5aae3a4f3f14f
+ *   解题https://www.bilibili.com/video/BV1Lv4y1e7HL?p=143&vd_source=943ca493b937adf4b7a5aae3a4f3f14f
  * @date 2023/7/14 17:30
  */
 public class demo3 {
