@@ -24,5 +24,11 @@ public class demo3 {
 //       最终n一定会一定会除到1，此时x即为结果，继续遍历时 myPow(x * x, n / 2) 则会返回1，所以x * myPow(x * x, n / 2) 就会返回x，也就是答案
         return n % 2 == 0 ? myPow(x * x, n / 2) : x * myPow(x * x, n / 2);
     }
+
+
+    public static void main(String[] args) {
+        int x = Integer.MIN_VALUE;
+        System.out.println(-x);
+    }
 }
 
