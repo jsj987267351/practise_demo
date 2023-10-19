@@ -13,7 +13,7 @@ import java.util.List;
  * @date 2023/5/6 16:41
  */
 public class demo3 {
-    public static List<List<Integer>> combine(int n, int k) {
+    public List<List<Integer>> combine(int n, int k) {
         List<List<Integer>> result = new ArrayList<>();
         if (n < k) {
             return result;
@@ -25,23 +25,20 @@ public class demo3 {
     }
 
 
-    public static void backtracking(List<List<Integer>> result, LinkedList<Integer> path, int n, int k, int startIndex) {
+    public void backtracking(List<List<Integer>> result, LinkedList<Integer> path, int n, int k, int startIndex) {
 //        中止条件
         if (path.size() == k) {
             result.add(new ArrayList<>(path));
             return;
         }
-
-        for (int i = startIndex; i <= n-(k-path.size())+1; i++) {
+//        【x, n】的数组长度起码应该是k-path.size()才有继续搜索的可能， 那么就有 n-x+1 = k-path.size()  ， 解方程得 x = n+1 - (k-path.size()), 而且这个x是可以作为起点往下搜的 也就是for(i = s; i<=x; i++) 这里的x是可以取到的
+        for (int i = startIndex; i <= n - (k - path.size()) + 1; i++) {
             path.offer(i);
             backtracking(result, path, n, k, i + 1);
             path.removeLast();
         }
     }
 
-    public static void main(String[] args) {
-        List<List<Integer>> combine = combine(4, 2);
-        System.out.println(combine);
-    }
+
 }
 
