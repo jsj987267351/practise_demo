@@ -9,7 +9,22 @@ import java.util.Arrays;
  * @date 2023/10/30 12:54
  */
 public class demo6 {
+
     public String longestCommonPrefix(String[] strs) {
+        String temp = strs[0];
+        for (String str : strs) {
+            while (!str.startsWith(temp)) {
+                if (temp.length() == 0){
+                    return "";
+                }
+                temp = temp.substring(0, temp.length() - 1);
+            }
+        }
+        return temp;
+    }
+
+
+    public String longestCommonPrefix1(String[] strs) {
         int length = strs.length;
         if (length < 2) {
             return strs[0];
