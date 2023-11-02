@@ -24,7 +24,9 @@ public class demo6 {
             nums[right] = temp;
             left++;
             right--;
+
         }
     }
+
 }
 
