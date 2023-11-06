@@ -1,34 +1,70 @@
 package month11.day05;
 
-import java.util.ArrayList;
-import java.util.HashMap;
-import java.util.List;
-import java.util.Map;
+
+import java.util.Arrays;
+import java.util.HashSet;
+import java.util.Set;
 
 /**
  * @author ：大爆炸
  * @version 1.0
  * @description TODO
- * @date 2023/11/5 12:18
+ * @date 2023/11/5 15:51
  */
 public class demo1 {
-    public List<String> findRepeatedDnaSequences(String s) {
-//        哈希表，从头遍历字符串中所有连续长度为10的字符串并记录出现次数，在遍历过程中统计出现2次的字符串即可，因为出现多次的话一定会到达两次，后面在出现到3次的时候不会符合判断条件，就不会重复
-        int length = s.length();
-        List<String> res = new ArrayList<>();
-        if (length < 10) {
-            return res;
+    public int longestConsecutive(int[] nums) {
+        Set<Integer> set = new HashSet<>();
+        for (int num : nums) {
+            set.add(num);
         }
-        Map<String, Integer> map = new HashMap<>();
-        int left = 0, right = 10;
-        while (right < length + 1) {
-            String temp = s.substring(left, right);
-            map.put(temp, map.getOrDefault(temp, 0) + 1);
-            if (map.get(temp) == 2){
-                res.add(temp);
+        int res = 0;
+        for (int num : nums) {
+            if (!set.contains(num -1)){
+                int curMax = 1;
+                while (set.contains(++num)){
+                    curMax++;
+                }
+                res = Math.max(res,curMax);
             }
-            left++;
-            right++;
+        }
+        return res;
+    }
+
+    public int longestConsecutive2(int[] nums) {
+        int length = nums.length;
+        if (length == 0) return 0;
+        Arrays.sort(nums);
+        int res = 1, curmax = 1;
+        for (int i = 1; i < length; i++) {
+            if (nums[i] == nums[i - 1] + 1) {
+                curmax++;
+            } else if (nums[i] == nums[i - 1]) {
+                continue;
+            } else {
+                res = Math.max(res, curmax);
+                curmax = 1;
+            }
+        }
+        res = Math.max(res, curmax);
+        return res;
+    }
+
+    public int longestConsecutive1(int[] nums) {
+        int length = nums.length;
+        if (length == 0) return 0;
+        Arrays.sort(nums);
+        int[] dp = new int[length];
+        dp[0] = 1;
+        int res = 1;
+        for (int i = 1; i < length; i++) {
+            if (nums[i] == nums[i - 1]) {
+                dp[i] = dp[i - 1];
+            } else if (nums[i] == nums[i - 1] + 1) {
+                dp[i] = dp[i - 1] + 1;
+            } else {
+                dp[i] = 1;
+            }
+            res = Math.max(res, dp[i]);
         }
         return res;
     }

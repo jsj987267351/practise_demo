@@ -1,42 +1,81 @@
 package month11.day06;
 
+import java.util.HashMap;
+import java.util.Map;
+
 /**
  * @author ：大爆炸
  * @version 1.0
  * @description TODO
- * @date 2023/11/5 16:42
+ * @date 2023/11/6 12:46
  */
 public class demo3 {
-    public int[] productExceptSelf(int[] nums) {
-        int length = nums.length;
-        int[] res = new int[length];
-        res[0] = 1;
-        for (int i = 1; i < length; i++) {
-            res[i] = res[i - 1] * nums[i - 1];
+    public String minWindow(String s, String t) {
+        Map<Character, Integer> need = new HashMap<>();
+        Map<Character, Integer> window = new HashMap<>();
+        for (int i = 0; i < t.length(); i++) {
+            need.put(t.charAt(i), need.getOrDefault(t.charAt(i), 0) + 1);
         }
-        int R = 1;
-        for (int i = length - 1; i >= 0; i--) {
-            res[i] = res[i] * R;
-            R = R * nums[i];
+        int left = 0, right = 0, valid = 0, len = Integer.MAX_VALUE, start = 0, end = 0;
+        while (right < s.length()) {
+            char last = s.charAt(right);
+            right++;
+            if (need.containsKey(last)) {
+                window.put(last, window.getOrDefault(last, 0) + 1);
+                if (window.get(last).equals(need.get(last))) {
+                    valid++;
+                }
+            }
+            while (valid == need.size()) {
+                if (right - left < len) {
+                    start = left;
+                    end = right;
+                    len = right - left;
+                }
+                char first = s.charAt(left);
+                left++;
+                if (need.containsKey(first)) {
+                    if (window.get(first).equals(need.get(first))) {
+                        valid--;
+                    }
+                    window.put(first, window.get(first) - 1);
+                }
+            }
         }
-        return res;
+        return len == Integer.MAX_VALUE ? "" : s.substring(start, end);
     }
 
-    public int[] productExceptSelf1(int[] nums) {
-        int length = nums.length;
-        int[] left = new int[length];
-        int[] right = new int[length];
-        int[] res = new int[length];
-        left[0] = 1;
-        right[length - 1] = 1;
-        for (int i = 1; i < length; i++) {
-            left[i] = left[i - 1] * nums[i - 1];
+
+    public String minWindow1(String s, String t) {
+        String res = "";
+        Map<Character, Integer> need = new HashMap<>();
+        Map<Character, Integer> window = new HashMap<>();
+        for (int i = 0; i < t.length(); i++) {
+            need.put(t.charAt(i), need.getOrDefault(t.charAt(i), 0) + 1);
         }
-        for (int i = length - 2; i >= 0; i--) {
-            right[i] = right[i + 1] * nums[i + 1];
-        }
-        for (int i = 0; i < length; i++) {
-            res[i] = left[i] * right[i];
+        int left = 0, right = 0, valid = 0;
+        while (right < s.length()) {
+            char last = s.charAt(right);
+            right++;
+            if (need.containsKey(last)) {
+                window.put(last, window.getOrDefault(last, 0) + 1);
+                if (window.get(last).equals(need.get(last))) {
+                    valid++;
+                }
+            }
+            while (valid == need.size()) {
+                if (res.equals("") || res.length() > right - left) {
+                    res = s.substring(left, right);
+                }
+                char first = s.charAt(left);
+                left++;
+                if (need.containsKey(first)) {
+                    window.put(first, window.get(first) - 1);
+                    if (window.get(first) < need.get(first)) {
+                        valid--;
+                    }
+                }
+            }
         }
         return res;
     }
