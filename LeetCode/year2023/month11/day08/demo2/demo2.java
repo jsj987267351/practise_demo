@@ -19,7 +19,7 @@ public class demo2 {
         map.put(0L, 1);
         return preSum(root, 0);
     }
-
+//       从根节点到当前节点的前缀和
     public int preSum(TreeNode root, long curSum) {
         if (root == null) {
             return 0;
