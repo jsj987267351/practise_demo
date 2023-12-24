@@ -29,7 +29,7 @@ public class demo3 {
 //                    该数字在前半段有序半段中，缩小范围
                     right = mid - 1;
                 } else {
-//                    该数字在前半段无序半段中，缩小范围
+//                    该数字在后半段无序半段中，缩小范围
                     left = mid + 1;
                 }
             } else if (arr[mid] < arr[left]) {
