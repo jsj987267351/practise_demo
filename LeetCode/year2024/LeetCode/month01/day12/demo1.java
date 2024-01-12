@@ -1,60 +1,31 @@
 package LeetCode.month01.day12;
 
-import java.util.Stack;
+import java.util.HashMap;
+import java.util.Map;
 
 /**
  * @author ：大爆炸
  * @version 1.0
  * @description TODO
- * @date 2024/1/11 13:27
+ * @date 2024/1/12 12:02
  */
 public class demo1 {
-    public int addMinimum(String word) {
-        Stack<Character> stack = new Stack<>();
-        for (int i = 0; i < word.length(); i++) {
-            char cur = word.charAt(i);
-            if (stack.isEmpty()) {
-                if (cur == 'b') {
-                    stack.push('a');
-                } else if (cur == 'c') {
-                    stack.push('a');
-                    stack.push('b');
-                }
-            } else {
-                char top = stack.peek();
-                if (cur == 'a') {
-                    if (top == 'a') {
-                        stack.push('b');
-                        stack.push('c');
-                    } else if (top == 'b') {
-                        stack.push('c');
-                    }
-                } else if (cur == 'b') {
-                    if (top == 'b') {
-                        stack.push('c');
-                        stack.push('a');
-                    } else if (top == 'c') {
-                        stack.push('a');
-                    }
-                } else {
-                    if (top == 'a') {
-                        stack.push('b');
-                    } else if (top == 'c') {
-                        stack.push('a');
-                        stack.push('b');
-                    }
-                }
+    public int countWords(String[] words1, String[] words2) {
+        Map<String, Integer> map1 = new HashMap<>();
+        Map<String, Integer> map2 = new HashMap<>();
+        for (String s : words1) {
+            map1.put(s, map1.getOrDefault(s, 0) + 1);
+        }
+        for (String s : words2) {
+            map2.put(s, map2.getOrDefault(s, 0) + 1);
+        }
+        int res = 0;
+        for (String key : map1.keySet()) {
+            if (map1.get(key) == 1 && map2.containsKey(key) && map2.get(key) == 1) {
+                res++;
             }
-            stack.push(cur);
         }
-        int res = stack.size() - word.length();
-        if (stack.peek() == 'a') {
-            return res + 2;
-        } else if (stack.peek() == 'b') {
-            return res + 1;
-        } else {
-            return res;
-        }
+        return res;
     }
 }
 

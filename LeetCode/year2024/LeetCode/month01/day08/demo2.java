@@ -1,47 +1,46 @@
 package LeetCode.month01.day08;
 
-import java.util.Arrays;
-
 /**
  * @author ：大爆炸
  * @version 1.0
  * @description TODO
- * @date 2024/1/7 14:55
+ * @date 2024/1/8 11:58
  */
 public class demo2 {
-    int mod = (int) 1e9 + 7;
+    //    可以先对1000个数字进行预处理
+    private final static int[] Fn = new int[1001];
 
-    public int numRollsToTarget(int n, int k, int target) {
-        if (target < n || target > n * k) {
-            return 0;
+    static {
+        for (int i = 1; i < 1001; i++) {
+            Fn[i] = Fn[i - 1] + (isPunishmentNumber(String.valueOf(i * i), 0, i) ? i * i : 0);
         }
-        long[] dp = new long[k + 1];
-        Arrays.fill(dp, 1);
-        for (int a = 2; a <= n; a++) {
-            long[] new_dp = new long[a * k + 1];
-            for (int b = a - 1; b <= (a - 1) * k; b++) {
-                for (int c = 1; c <= k; c++) {
-                    new_dp[b + c] = (new_dp[b + c] + dp[b]) % mod;
-                }
-            }
-            dp = new_dp;
-        }
-        return (int) dp[target + 1];
     }
 
-    public int numRollsToTarget1(int n, int m, int target) {
-        int[][] dp = new int[n + 1][target + 1];
-        dp[0][0] = 1;
-        for (int i = 1; i <= n; i++) {
-            for (int j = i; j <= target; j++) {
-                for (int k = 1; k <= m; k++) {
-                    if (k <= j) {
-                        dp[i][j] = (dp[i][j] + dp[i - 1][j - k]) % mod;
-                    }
+    public int punishmentNumber(int n) {
+//        int res = 0;
+//        for (int i = 1; i <= n; i++) {
+//            if (isPunishmentNumber(String.valueOf(i * i), 0, i)) {
+//                res += i * i;
+//            }
+//        }
+//        return res;
+        return Fn[n];
+    }
+
+    public static boolean isPunishmentNumber(String s, int startIndex, int target) {
+        if (target < 0) {
+            return false;
+        } else if (startIndex == s.length() && target == 0) {
+            return true;
+        } else {
+            for (int i = startIndex; i < s.length(); i++) {
+                int cur = Integer.parseInt(s.substring(startIndex, i + 1));
+                if (target >= cur && isPunishmentNumber(s, i + 1, target - cur)) {
+                    return true;
                 }
             }
         }
-        return dp[n][target];
+        return false;
     }
 }
 
