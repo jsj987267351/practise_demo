@@ -1,4 +1,4 @@
-package Blue.month01;
+package Blue;
 
 import java.util.Scanner;
 
