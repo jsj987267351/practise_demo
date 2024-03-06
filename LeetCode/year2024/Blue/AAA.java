@@ -1,5 +1,6 @@
 package Blue;
 
+
 import java.util.Scanner;
 
 /**
