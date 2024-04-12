@@ -47,13 +47,13 @@ public class P8599 {
 
     //    判断当前排列是否可行
     public static void check(int[] temp) {
-//        分子和分母至少占两个数，所以分子最多用7个数字
+//        分子和分母至少占两个数，所以整数最多用7个数字
         for (int i = 0; i < 7; i++) {
 //            拿到整数
             int num = toInt(temp, 0, i);
 //            拿到整数已经比结果数字大了，剪枝
             if (num >= target) {
-                break;
+                continue;
             }
 //            拿分母与分子,前面算分母还是分子都可以，因为所有排列都会进来,这里先拿分母，最少要留一个数字给分子
             for (int j = i + 1; j < 8; j++) {

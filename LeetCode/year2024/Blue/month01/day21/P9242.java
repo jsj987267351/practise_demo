@@ -1,5 +1,6 @@
 package Blue.month01.day21;
 
+import java.util.Arrays;
 import java.util.Scanner;
 
 /**
@@ -9,7 +10,7 @@ import java.util.Scanner;
  * @date 2024/1/21 16:10
  */
 public class P9242 {
-    public static void main(String[] args) {
+        public static void main(String[] args) {
         Scanner scanner = new Scanner(System.in);
         int length = scanner.nextInt();
         int[] temp = new int[length];
@@ -61,5 +62,6 @@ public class P9242 {
 //        System.out.println(length - res);
 //        scanner.close();
 //    }
+//}
 
 

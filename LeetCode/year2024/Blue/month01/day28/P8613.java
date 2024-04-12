@@ -29,9 +29,9 @@ public class P8613 {
                 if (arr[j] < cur) help[i]++;
             }
         }
-        int res = 0;
+        long res = 0;
         for (int i = 0; i < n; i++) {
-            res += (help[i] * (help[i] + 1) / 2);
+            res += ((long) help[i] * (help[i] + 1) / 2);
         }
         System.out.println(res);
         scanner.close();
