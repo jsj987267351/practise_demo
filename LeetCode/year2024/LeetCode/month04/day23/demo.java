@@ -1,4 +1,4 @@
-package LeetCode.month04.day24;
+package LeetCode.month04.day23;
 
 /**
  * @author ：大爆炸
