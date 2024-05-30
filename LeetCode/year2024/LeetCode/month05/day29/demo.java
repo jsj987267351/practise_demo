@@ -10,6 +10,7 @@ import java.util.Map;
  * @date 2024/5/29 14:24
  */
 public class demo {
+
     public int maximumLength(String s) {
         Map<String, Integer> map = new HashMap<>();
         for (int i = 0; i < s.length(); i++) {
