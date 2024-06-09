@@ -25,5 +25,6 @@ public class demo2 {
         }
         return Math.max(first[length - 2], second[length - 1]);
     }
+
 }
 
