@@ -23,7 +23,7 @@ public class demo3 {
         }
 
         public void push(int val) {
-//            特判，测试用例有cao =0的情况
+//            特判，测试用例有cap =0的情况
             if (size <= 0) {
                 return;
             }
