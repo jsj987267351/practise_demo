@@ -38,7 +38,7 @@ public class demo10 {
         }
 
         public int popAt(int index) {
-            if (index < 0 || index >= list.size() || list.get(index).isEmpty()) return -1;
+            if (index < 0 || index >= list.size()) return -1;
             ArrayDeque<Integer> stack = list.get(index);
             int res = stack.pop();
             if (stack.isEmpty()) {
