@@ -1,7 +1,6 @@
 package LeetCode.month07.day02;
 
 import java.util.ArrayList;
-import java.util.Arrays;
 import java.util.List;
 import java.util.PriorityQueue;
 
