@@ -1,4 +1,4 @@
-package LeetCode.month01.day08.day07;
+package LeetCode.month01.day07;
 
 import java.util.Collections;
 import java.util.List;
